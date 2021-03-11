@@ -50,8 +50,10 @@ def gettt(li):
         browser.close()
         browser.switch_to.window(browser.window_handles[0])
 
+def popular():
+    for li in arr:
+        show_desc_pop(li)
+        gettt(li)
+        print("\n--------------------------------------\n")
 
-for li in arr:
-    show_desc_pop(li)
-    gettt(li)
-    print("\n--------------------------------------\n")
+popular()
