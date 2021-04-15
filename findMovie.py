@@ -2,9 +2,9 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from bs4 import BeautifulSoup
 
-chromedriver = '/usr/bin/chromedriver'
+chromedriver = 'chromedriver.exe'
 options = webdriver.ChromeOptions()
-# options.add_argument('headless')
+options.add_argument('headless')
 browser = webdriver.Chrome(executable_path=chromedriver, options=options)
 
 
@@ -58,5 +58,4 @@ def findMovie(moviename):
     mc = findMoviePage(moviename)
     showSchedule(mc)
 
-
-#findMovie("батя")
+# findMovie("батя")
