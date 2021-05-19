@@ -4,7 +4,8 @@ from bs4 import BeautifulSoup
 
 chromedriver = '/usr/bin/chromedriver'
 options = webdriver.ChromeOptions()
-# options.add_argument('headless')
+# закомментить строку ниже чтоб отображала графически браузер
+options.add_argument('headless')
 browser = webdriver.Chrome(executable_path=chromedriver, options=options)
 
 
@@ -13,6 +14,7 @@ mainDiv = browser.find_element_by_id("widget-content")
 arr = mainDiv.find_elements_by_xpath(".//li")
 # print(type(arr))
 # print(arr[0])
+
 def show_desc_pop(x):
     x = x.text.split("\n")
     # если рейтинга нет, то длина не равна 4
@@ -21,12 +23,16 @@ def show_desc_pop(x):
         print("название:          ", x[2])
         print("короткое описание: ", x[3])
         print("рейтинг:           ", x[1])
-    else:
+        print("жанр:              ", x[0])
+    elif(len(x) == 3):
         print("название:          ", x[1])
         print("короткое описание: ", x[2])
-
-    print("жанр:              ", x[0])
-
+        print("жанр:              ", x[0])
+    elif(len(x) == 2):
+        print("название:          ", x[1])
+        print("жанр:              ", x[0])
+    else:
+        print("название:          ", x[1])
 
 def gettt(li):
     link = li.find_elements_by_xpath(".//a")[-1].get_attribute('href')
@@ -53,7 +59,8 @@ def gettt(li):
 def popular():
     for li in arr:
         show_desc_pop(li)
-        gettt(li)
+# раскомментить строку ниже чтоб отображать imdb оценку, но займет времени п*здец как много
+#         gettt(li)
         print("\n--------------------------------------\n")
 
 popular()
