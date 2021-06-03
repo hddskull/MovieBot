@@ -74,10 +74,11 @@ def findCinemaByMetro(metroName):
         # print("----------------")
         varToBot += "----------------"
         varToBot += "\n"
+    browser.quit()
     return varToBot
 
 # Возвращает переменную varToBot, которую нужно выводить в боте
 
 # metroName = 'Шипиловская'
 # print(findCinemaByMetro(metroName))
-browser.quit()
+# browser.quit()

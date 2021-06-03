@@ -75,8 +75,10 @@ def findCinemaByName(CinemaName):
         for el in times:
             # print(el.text)
             varToBot += el.text
+            varToBot += "\n"
 
-        varToBot += "\n-------------\n"
+        varToBot += "------------\n"
+    browser.quit()
     return varToBot
     # print(varToBot)
 
@@ -84,6 +86,6 @@ def findCinemaByName(CinemaName):
 
 # Возвращает переменную varToBot, которую нужно выводить в боте
 
-# CinemaName = 'Балтика'
-# print(findCinemaByName(CinemaName))
-browser.quit()
+CinemaName = 'Балтика'
+print(findCinemaByName(CinemaName))
+
