@@ -14,7 +14,7 @@ chromedriver = '/usr/bin/chromedriver'
 
 options = webdriver.ChromeOptions()
 # закомментить строку ниже чтоб отображала графически браузер
-# options.add_argument('headless')
+options.add_argument('headless')
 browser = webdriver.Chrome(executable_path=chromedriver, options=options)
 
 
@@ -86,6 +86,6 @@ def findCinemaByName(CinemaName):
 
 # Возвращает переменную varToBot, которую нужно выводить в боте
 
-CinemaName = 'Балтика'
-print(findCinemaByName(CinemaName))
+# CinemaName = 'Балтика'
+# print(findCinemaByName(CinemaName))
 

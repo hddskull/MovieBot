@@ -4,11 +4,12 @@ from bs4 import BeautifulSoup
 
 # хромдрайвер для винды
 # chromedriver = 'chromedriver.exe'
+
 # хромдрайвер для убунты
 chromedriver = '/usr/bin/chromedriver'
 options = webdriver.ChromeOptions()
 # закомментить строку ниже чтоб отображала графически браузер
-# options.add_argument('headless')
+options.add_argument('headless')
 browser = webdriver.Chrome(executable_path=chromedriver, options=options)
 
 
